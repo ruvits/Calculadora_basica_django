@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>django</title>
+</head>
+<body>
+    <form method="post" action="{% url 'aritimetica:somar' %}">
+        {% csrf_token %}
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="submit" value="somar">
+    </form>
+    
+    <form method="post" action="{% url 'aritimetica:subtrair' %}">
+        {% csrf_token %}
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="submit" value="subtrair">
+    </form>
+
+    <form method="post" action="{% url 'aritimetica:multiplicar' %}">
+        {% csrf_token %}
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="submit" value="multiplicar">
+    </form>
+
+    <form method="post" action="{% url 'aritimetica:dividir' %}">
+        {% csrf_token %}
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="submit" value="dividir">
+    </form>
+
+    <h1>{{resp}}</h1>
+</body>
+</html>
